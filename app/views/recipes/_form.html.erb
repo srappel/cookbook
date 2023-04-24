@@ -1,0 +1,26 @@
+<%= form_with model: recipe do |form| %>
+    <div>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+        <% @recipe.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :ingredients %><br>
+        <%= form.text_area :ingredients %>
+        <% @recipe.errors.full_messages_for(:ingredients).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :gluten_free %><br>
+        <%= form.check_box :instructions %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

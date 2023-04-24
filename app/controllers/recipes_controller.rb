@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(title: "...", ingredeints: "...")
+    @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
       redirect_to @recipe
@@ -20,4 +20,23 @@ class RecipesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+
+    if @recipe.update(recipe_params)
+      redirect_to @recipe
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  private
+    def recipe_params
+      params.require(:recipe).permit(:title, :ingredients, :instructions, :prep_time, :cook_time, :equipment, :easy, :gluten_free, :vegetarian)
+    end
 end
