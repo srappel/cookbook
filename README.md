@@ -29,3 +29,4 @@ Things you may want to cover:
 bin/rails generate model Recipe title:string ingredients:string instructions:string prep_time:integer cook_time:integer equipment:string easy:boolean 
 ```
 
+I'm following allong here: https://guides.rubyonrails.org/gettingstarted.html

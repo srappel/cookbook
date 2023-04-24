@@ -1,0 +1,22 @@
+<h1>New Recipe</h2>
+
+<%= form_with model: @recipe do |form| %>
+    <div>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+    </div>
+
+    <div>
+        <%= form.label :ingredients %><br>
+        <%= form.text_area :ingredients %>
+    </div>
+
+    <div>
+        <%= form.label :gluten_free %><br>
+        <%= form.check_box :instructions %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
