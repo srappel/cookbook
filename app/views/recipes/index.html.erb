@@ -1,0 +1,10 @@
+<h1>Anoszko and Appel Recipes</h1>
+<p>Find this file in app/views/recipes/index.html.erb</p>
+
+<ul>
+    <% @recipes.each do |recipe| %>
+        <li>
+            <%= recipe.title %>
+        </li>
+    <% end %>
+</ul>
