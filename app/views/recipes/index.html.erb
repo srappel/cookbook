@@ -3,11 +3,14 @@
 <a href="https://github.com/srappel/cookbook">Repo</a>
 
 <h2>Recipes</h2>
+Our blog has <%= Recipe.public_count %> articles and counting!
 <ul>
     <% @recipes.each do |recipe| %>
-        <li>
-            <%= link_to recipe.title, recipe %>
-        </li>
+        <% unless recipe.archived? %>
+            <li>
+                <%= link_to recipe.title, recipe %>
+            </li>
+        <% end %>
     <% end %>
 </ul>
 
